@@ -1,0 +1,96 @@
+\documentclass[a5paper,portrait]{article}
+
+% Encodage et langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Mise en page et graphiques
+\usepackage{geometry}
+\geometry{margin=1.5cm}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{lmodern} % Police moderne et sans-serif
+\usepackage{tcolorbox}
+
+% Palette de couleurs sobres
+\definecolor{mainblue}{HTML}{2D4159}
+\definecolor{lightgray}{HTML}{F5F6FA}
+\definecolor{accent}{HTML}{F7B32B}
+
+% Styles de titres modernes
+\titleformat{\section}
+  {\color{mainblue}\sffamily\LARGE\bfseries}
+  {}{0pt}{}
+\titleformat{\subsection}
+  {\color{accent}\sffamily\large\bfseries}
+  {}{0pt}{}
+
+% En-tête et pied de page sobres
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\color{mainblue}\sffamily Notice d'Assemblage}
+\fancyhead[R]{\color{mainblue}\sffamily\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Listes compactes et sans puce
+\setlist[itemize]{left=0pt, label=--, topsep=2pt}
+\setlist[enumerate]{topsep=2pt}
+
+% Tableaux épurés
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{8pt}
+
+% Fond de page clair (optionnel)
+%\pagecolor{lightgray}
+
+\begin{document}
+
+\begin{titlepage}
+    %\begin{minipage}[t][0.95\textheight][t]{0.48\textwidth}
+    %\end{minipage}%
+    \hfill
+    %\begin{minipage}[t][0.95\textheight][t]{0.48\textwidth}
+        \centering
+        \vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Notice d'Assemblage}\\[1cm]
+        {\color{accent}\sffamily\Large Modèle inspiré par IKEA et LEGO}\\[1.5cm]
+        \begin{center}
+            \includegraphics[width=0.5\textwidth]{../images/general_vue.png}
+        \end{center}
+        \vfill
+        {\color{mainblue}\large Date: \today}
+    %\end{minipage}
+\end{titlepage}
+
+\newpage
+
+
+
+\newpage
+
+\section*{Nomenclature des Pièces}
+\input{../nomenclature/parts_list.tex}
+\section*{Outils Nécessaires}
+\input{tools.tex}
+
+\newpage
+
+\input{steps/step1.tex}
+
+\newpage
+
+\input{steps/step2.tex}
+
+\newpage
+
+\end{document}

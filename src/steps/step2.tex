@@ -1,0 +1,43 @@
+
+% En-tête de l'étape : numéro bien à gauche et en haut
+\noindent
+\begin{minipage}[t]{0.12\textwidth}
+    \vspace{0pt}
+    \begin{tikzpicture}
+        \draw[fill=gray!20, draw=gray!80, line width=1pt] (0,0) circle (1.7em);
+        \node at (0,0) {\sffamily\bfseries\huge 2};
+    \end{tikzpicture}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.86\textwidth}
+    \begin{tcolorbox}[colback=gray!10, colframe=gray!60, boxrule=0.7pt, left=2mm, right=2mm, top=1mm, bottom=1mm]
+        \begin{tabularx}{\textwidth}{@{}cc@{\hspace{1cm}}cc@{}}
+            \includegraphics[width=1.5cm]{../images/part1.png} & \textbf{Pièce A} $\times$ 4
+            & \includegraphics[width=1.5cm]{../images/part2.png} & \textbf{Pièce B} $\times$ 2 \\
+            \includegraphics[width=1.5cm]{../images/part3.png} & \textbf{Pièce C} $\times$ 1
+            & & \\
+        \end{tabularx}
+    \end{tcolorbox}
+    % Images des outils centrées à droite
+    \vspace{0.5em}
+    \noindent
+    \begin{flushright}
+        \includegraphics[height=1cm]{../images/tool2.png}
+    \end{flushright}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{center}
+    \includegraphics[height=9cm]{../images/step2_render.png}
+\end{center}
+
+\vspace{0.7em}
+
+\begin{tcolorbox}[colback=gray!05, colframe=gray!60, boxrule=0.5pt, left=2mm, right=2mm, title=]
+    \begin{enumerate}
+        \item Rassemblez les pièces nécessaires (voir la nomenclature).
+        \item Suivez les instructions ci-dessous pour assembler les pièces.
+        \item Vérifiez l’alignement avant de serrer.
+    \end{enumerate}
+\end{tcolorbox}
