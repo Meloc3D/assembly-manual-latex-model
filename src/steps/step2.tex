@@ -1,27 +1,34 @@
 
+
 % En-tête de l'étape : numéro bien à gauche et en haut
 \noindent
 \begin{minipage}[t]{0.12\textwidth}
-    \vspace{0pt}
+    \vspace*{-\topskip} % Remonte le contenu au maximum
     \begin{tikzpicture}
-        \draw[fill=gray!20, draw=gray!80, line width=1pt] (0,0) circle (1.7em);
-        \node at (0,0) {\sffamily\bfseries\huge 2};
+        \node[anchor=north west] at (0,0) {\usefont{OT1}{phv}{b}{n}\huge 2}; % Numéro de l'étape
     \end{tikzpicture}
 \end{minipage}%
 \hfill
-\begin{minipage}[t]{0.86\textwidth}
-    \begin{tcolorbox}[colback=gray!10, colframe=gray!60, boxrule=0.7pt, left=2mm, right=2mm, top=1mm, bottom=1mm]
+
+% !! images des pièces 
+\begin{minipage}[t]{1\textwidth}
+    \begin{tcolorbox}[colback=white, colframe=white!60, boxrule=0.7pt, left=2mm, right=2mm, top=1mm, bottom=1mm]
+        \setlength{\extrarowheight}{0pt} % <-- Ajouté pour réduire l'espace vertical
         \begin{tabularx}{\textwidth}{@{}cc@{\hspace{1cm}}cc@{}}
-            \includegraphics[width=1.5cm]{../images/part1.png} & \textbf{Pièce A} $\times$ 4
-            & \includegraphics[width=1.5cm]{../images/part2.png} & \textbf{Pièce B} $\times$ 2 \\
-            \includegraphics[width=1.5cm]{../images/part3.png} & \textbf{Pièce C} $\times$ 1
-            & & \\
+            \includegraphics[width=1.5cm]{../images/_107_Vis.png} & \textbf{M5 Screw} $\times$ 2
+            & \includegraphics[width=1.5cm]{../images/_107_Rondele.png} & \textbf{Washer} $\times$ 2 \\
+            \includegraphics[width=1.5cm]{../images/_107_Nut.png} & \textbf{M5 Nut} $\times$ 2
+            %& & \\
         \end{tabularx}
+        \setlength{\extrarowheight}{0.5em} % <-- Remet la valeur par défaut si besoin après
     \end{tcolorbox}
-    % Images des outils centrées à droite
-    \vspace{0.5em}
+
+
+    % !! Images des outils centrées à droite
+    \vspace{0.05em}
     \noindent
     \begin{flushright}
+        \includegraphics[height=1cm]{../images/tool1.png} \hspace{0.1cm}
         \includegraphics[height=1cm]{../images/tool2.png}
     \end{flushright}
 \end{minipage}
@@ -29,15 +36,16 @@
 \vspace{1em}
 
 \begin{center}
-    \includegraphics[height=9cm]{../images/step2_render.png}
+    \includegraphics[height=10cm]{../images/_102_.png}
 \end{center}
 
 \vspace{0.7em}
 
-\begin{tcolorbox}[colback=gray!05, colframe=gray!60, boxrule=0.5pt, left=2mm, right=2mm, title=]
-    \begin{enumerate}
-        \item Rassemblez les pièces nécessaires (voir la nomenclature).
-        \item Suivez les instructions ci-dessous pour assembler les pièces.
-        \item Vérifiez l’alignement avant de serrer.
-    \end{enumerate}
-\end{tcolorbox}
+%\begin{tcolorbox}[colback=gray!05, colframe=gray!60, boxrule=0.5pt, left=2mm, right=2mm, title=]
+%    \begin{enumerate}
+%        \item Rassemblez les pièces nécessaires (voir la nomenclature).
+%        \item Vérifiez l'allignement entre le pied avant et le plateau du châssis.
+%        \item Insérez les vis M5 à travers le pied avant et le plateau du châssis.
+%        \item Serrzez les écrous M5 sur les vis.
+%        \end{enumerate}
+%\end{tcolorbox}

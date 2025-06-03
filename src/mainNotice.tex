@@ -1,11 +1,13 @@
 \documentclass[a5paper,portrait]{article}
 
-% Encodage et langue
+% Encoding and language
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}
+\usepackage{longtable}
 
-% Mise en page et graphiques
+\usepackage[english]{babel}
+
+% Layout and graphics
 \usepackage{geometry}
 \geometry{margin=1.5cm}
 \usepackage{graphicx}
@@ -19,70 +21,92 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{xcolor}
-\usepackage{lmodern} % Police moderne et sans-serif
+\usepackage{lmodern} % Modern sans-serif font
 \usepackage{tcolorbox}
+\usepackage[scaled=0.95]{helvet} % Helvet option
+\renewcommand{\familydefault}{\sfdefault} % Use Helvet by default
 
-% Palette de couleurs sobres
-\definecolor{mainblue}{HTML}{2D4159}
-\definecolor{lightgray}{HTML}{F5F6FA}
-\definecolor{accent}{HTML}{F7B32B}
+% Subtle gray color palette
+\definecolor{mainblue}{gray}{0.25}    % Dark gray
+\definecolor{lightgray}{gray}{0.96}   % Very light gray
+\definecolor{accent}{gray}{0.65}      % Medium gray
 
-% Styles de titres modernes
+% Modern title styles with gray shades
+\definecolor{sectiongray}{gray}{0.25} % Dark gray for sections
+\definecolor{subsectiongray}{gray}{0.45} % Medium gray for subsections
+
 \titleformat{\section}
-  {\color{mainblue}\sffamily\LARGE\bfseries}
+  {\color{sectiongray}\sffamily\LARGE\bfseries}
   {}{0pt}{}
 \titleformat{\subsection}
-  {\color{accent}\sffamily\large\bfseries}
+  {\color{subsectiongray}\sffamily\large\bfseries}
   {}{0pt}{}
 
-% En-tête et pied de page sobres
+% Simple header and footer
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\color{mainblue}\sffamily Notice d'Assemblage}
-\fancyhead[R]{\color{mainblue}\sffamily\thepage}
+\fancyfoot[L]{\color{mainblue}\sffamily Assembly Manual}
+\fancyfoot[R]{\color{mainblue}\sffamily\thepage}
 \renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-% Listes compactes et sans puce
+% Compact, bulletless lists
 \setlist[itemize]{left=0pt, label=--, topsep=2pt}
 \setlist[enumerate]{topsep=2pt}
 
-% Tableaux épurés
+% Clean tables
 \renewcommand{\arraystretch}{1.2}
 \setlength{\tabcolsep}{8pt}
 
-% Fond de page clair (optionnel)
+% Light page background (optional)
 %\pagecolor{lightgray}
 
 \begin{document}
 
 \begin{titlepage}
-    %\begin{minipage}[t][0.95\textheight][t]{0.48\textwidth}
-    %\end{minipage}%
     \hfill
-    %\begin{minipage}[t][0.95\textheight][t]{0.48\textwidth}
-        \centering
-        \vspace*{2cm}
-        {\color{mainblue}\sffamily\Huge Notice d'Assemblage}\\[1cm]
-        {\color{accent}\sffamily\Large Modèle inspiré par IKEA et LEGO}\\[1.5cm]
-        \begin{center}
-            \includegraphics[width=0.5\textwidth]{../images/general_vue.png}
-        \end{center}
-        \vfill
-        {\color{mainblue}\large Date: \today}
-    %\end{minipage}
+    \centering
+    \vspace*{2cm}
+    {\color{mainblue}\sffamily\Huge Assembly Manual}\\[1cm]
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{../images/logo.png}
+    \end{center}
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{../images/general_vue.png}
+    \end{center}
+    \vfill
+    {\color{mainblue}\large Date: \today}
 \end{titlepage}
 
 \newpage
 
-
-
 \newpage
 
-\section*{Nomenclature des Pièces}
+\section*{Parts List}
+\begin{tcolorbox}[colback=lightgray, colframe=accent, sharp corners, boxrule=0.5pt, left=2mm, right=2mm, top=1mm, bottom=1mm]
+\textbf{Caution:} Please use caution when handling the parts, as some of them are sharp.
+\end{tcolorbox}
+
+\vspace{1em}
+
+You should receive the parts on the following pallet:
+
+\begin{center}
+  \includegraphics[width=1\textwidth]{../images/delivery.png}
+\end{center}
+
 \input{../nomenclature/parts_list.tex}
-\section*{Outils Nécessaires}
+\section*{Required Tools}
 \input{tools.tex}
 
+\newpage
+\centering
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Chassis Assembly}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/Chap1_render.png}
+\end{center}
+     
 \newpage
 
 \input{steps/step1.tex}
@@ -92,5 +116,212 @@
 \input{steps/step2.tex}
 
 \newpage
+
+\input{steps/step3.tex}
+
+\newpage
+
+\input{steps/step4.tex}
+
+\newpage
+
+\input{steps/step5.tex}
+
+\newpage
+
+\input{steps/step6.tex}
+
+\newpage
+
+\input{steps/step7.tex}
+
+\newpage
+
+\input{steps/step8.tex}
+
+\newpage
+
+\input{steps/step9.tex}
+
+\newpage
+
+\input{steps/step10.tex}
+
+\newpage
+
+\input{steps/step11.tex}
+
+\newpage
+
+\input{steps/step12.tex}
+\newpage
+\input{steps/step13.tex}
+\newpage
+
+\newpage
+\centering
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Fish guide}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/Chap2_Assembly.png}
+\end{center}
+     
+\newpage
+\input{steps/step14.tex}
+\newpage
+\input{steps/step15.tex}
+\newpage
+\input{steps/step16.tex}
+\newpage
+\input{steps/step17.tex}
+\newpage
+\input{steps/step18.tex}
+\newpage
+\input{steps/step19.tex}
+\newpage
+\input{steps/step20.tex}
+\newpage
+\input{steps/step21.tex}
+\newpage
+\input{steps/step22.tex}
+\newpage
+\input{steps/step23.tex}
+\newpage
+\input{steps/step24.tex}
+\newpage
+\input{steps/step25.tex}
+\newpage
+\input{steps/step26.tex}
+\newpage
+\input{steps/step27.tex}
+\newpage
+\input{steps/216.tex}
+\newpage
+\input{steps/217.tex}
+\newpage
+\input{steps/218.tex}
+\newpage
+\input{steps/219.tex}
+\newpage
+\input{steps/220.tex}
+\newpage
+\input{steps/221.tex}
+\newpage
+\input{steps/222.tex}
+\newpage
+
+\centering
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Cutting casing}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/Chap3_Assembly.png}
+\end{center}
+\newpage
+\input{steps/step28.tex}
+\newpage
+\input{steps/step29.tex}
+\newpage
+\input{steps/step30.tex}
+\newpage
+\input{steps/step31.tex}
+\newpage
+\input{steps/step32.tex}
+\newpage
+\input{steps/step33.tex}
+\newpage
+\input{steps/step34.tex}
+\newpage
+\input{steps/step35.tex}
+\newpage
+\input{steps/step36.tex}
+\newpage
+\input{steps/step37.tex}
+\newpage
+\input{steps/step38.tex}
+\newpage
+\input{steps/step39.tex}
+\newpage
+\input{steps/step40.tex}
+\newpage
+
+\centering
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Final assembly}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/Chap4_Assembly.png}
+\end{center}
+\newpage
+\input{steps/step41.tex}
+\newpage
+\input{steps/step42.tex}
+\newpage
+\input{steps/step43.tex}
+\newpage
+\input{steps/step44.tex}
+\newpage
+
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Cable management}\\[1cm]
+\begin{center}
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../images/cable1.png}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{../images/Cable 2.png}
+  \end{minipage}
+\end{center}
+
+\newpage
+
+
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Maintenance instruction}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/Chap4_Assembly.png}
+\end{center}
+\newpage
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Conveyor loading}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/Couvercle_Convoyeur.png}
+\end{center}
+\newpage
+\input{steps/step45.tex}
+\newpage
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Manual loading}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/Couvercle_Manuel.png}
+\end{center}
+\newpage
+\input{steps/step46.tex}
+\newpage
+\vspace*{2cm}
+        {\color{mainblue}\sffamily\Huge Changing the blades}\\[1cm]
+\begin{center}
+            \includegraphics[width=1\textwidth]{../images/blades_render.png}
+\end{center}
+\newpage
+\input{steps/step47.tex}
+\newpage
+\input{steps/step48.tex}
+\newpage
+
+
+\input{steps/step49.tex}
+\newpage
+\input{steps/step50.tex}
+\newpage
+\input{steps/step51.tex}
+\newpage
+
+\input{steps/step52.tex}
+\newpage
+
+
+
 
 \end{document}
